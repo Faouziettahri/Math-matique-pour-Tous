@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Mathématiques pour Tous</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 0.5em 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #34495e;
+            padding: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        main {
+            max-width: 900px;
+            margin: 2em auto;
+            padding: 2em;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+   
+        label {
+            display: block;
+            margin-top: 1em;
+            color: #333;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.5em;
+            margin-top: 0.5em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.75em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1em;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mathématiques pour Tous</h1>
+    </header>
+    <nav>
+        <li><a href="http://127.0.0.1:8000/Actualités/" class="nav-link" >Actualités</a></li>
+		<li><a href="http://127.0.0.1:8000/Cours/" class="nav-link" >Cours</a></li>
+		<li><a href="http://127.0.0.1:8000/Exercices/" class="nav-link" >Exercice</a></li>
+		<li><a href="http://127.0.0.1:8000/Ressources/" class="nav-link" >Ressources</a></li>
+		<li><a href="http://127.0.0.1:8000/propos/" class="nav-link" >À propos</a></li>
+        <li><a href="http://127.0.0.1:8000/Contact/" class="nav-link" >Contact</a></li>
+
+    </nav>
+    <main>
+        <h1>Contact</h1>
+        <p>Pour toute question, suggestion ou demande d'information, n'hésitez pas à nous contacter en utilisant le formulaire ci-dessous. Nous vous répondrons dans les plus brefs délais.</p>
+        <form action="submit_contact.php" method="post">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="subject">Sujet :</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </main>
+</body>
+</html>

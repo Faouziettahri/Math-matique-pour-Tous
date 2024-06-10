@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathématiques pour Tous</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #34495e;
+            padding: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        section {
+            background-color: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            color: #16a085;
+        }
+        ol {
+            margin-left: 1.5rem;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                margin: 0.5rem 0;
+            }
+            main {
+                padding: 1rem;
+            }
+        }
+    </style>
+    <script>
+        function showContent() {
+            var level = document.getElementById("level").value;
+            var sections = document.querySelectorAll('.content-section');
+            sections.forEach(function(section) {
+                section.style.display = "none";
+            });
+            if (document.getElementById(level)) {
+                document.getElementById(level).style.display = "block";
+            }
+        }
+
+        function showCollegeLevel() {
+            var collegeLevel = document.getElementById("college-level").value;
+            var levels = ['sixth', 'fifth', 'fourth', 'third'];
+            levels.forEach(function(level) {
+                document.getElementById(level + '-grade').style.display = "none";
+            });
+            document.getElementById(collegeLevel + '-grade').style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Mathématiques pour Tous</h1>
+    </header>
+    <nav>
+        <li><a href="http://127.0.0.1:8000/Actualités/" class="nav-link" >Actualités</a></li>
+		<li><a href="http://127.0.0.1:8000/Cours/" class="nav-link" >Cours</a></li>
+		<li><a href="http://127.0.0.1:8000/Exercices/" class="nav-link" >Exercice</a></li>
+		<li><a href="http://127.0.0.1:8000/Ressources/" class="nav-link" >Ressources</a></li>
+		<li><a href="http://127.0.0.1:8000/propos/" class="nav-link" >À propos</a></li>
+        <li><a href="http://127.0.0.1:8000/Contact/" class="nav-link" >Contact</a></li>
+    </nav>
+    <main>
+        <section id="news">
+            <h2>Actualités</h2>
+            <p>Toutes les dernières nouvelles et mises à jour sur les mathématiques.</p>
+        </section>
+        <section id="resources">
+            <h2>Ressources</h2>
+            <p>Accédez à une variété de ressources éducatives pour tous les niveaux.</p>
+        </section>
+        <section id="exercises">
+            <h2>Exercices</h2>
+            <label for="level">Sélectionnez votre niveau scolaire :</label>
+            <select id="level" name="level" onchange="showContent()">
+                <option value="beginner">Débutant</option>
+                <option value="intermediate">Intermédiaire</option>
+                <option value="advanced">Avancé</option>
+                <option value="college">Collège</option>
+            </select>
+
+            <div id="beginner" class="content-section" style="display: none;">
+                <h3>Débutant</h3>
+                <ol>
+                    <li>Calculez \( 5 + 3 \).</li>
+                    <li>Quel est le produit de \( 6 \times 7 \) ?</li>
+                    <li>Simplifiez la fraction \( \frac{8}{12} \).</li>
+                </ol>
+            </div>
+            <div id="intermediate" class="content-section" style="display: none;">
+                <h3>Intermédiaire</h3>
+                <ol>
+                    <li>Résolvez l'équation : \( 3x + 4 = 19 \).</li>
+                    <li>Calculez l'aire d'un cercle de rayon 5 cm, en utilisant \( A = \pi r^2 \).</li>
+                    <li>Développez et simplifiez : \( (x + 2)(x - 3) \).</li>
+                </ol>
+            </div>
+            <div id="advanced" class="content-section" style="display: none;">
+                <h3>Avancé</h3>
+                <ol>
+                    <li>Résolvez l'équation quadratique : \( x^2 - 5x + 6 = 0 \).</li>
+                    <li>Calculez l'intégrale de la fonction \( f(x) = 2x \) de 0 à 3 : \( \int_0^3 2x \, dx \).</li>
+                    <li>Déterminez la limite de la fonction \( \frac{3x^2 - 2x + 1}{x - 1} \) quand \( x \) approche 1.</li>
+                </ol>
+            </div>
+            <div id="college" class="content-section" style="display: none;">
+                <h3>Collège</h3>
+                <label for="college-level">Sélectionnez votre niveau :</label>
+                <select id="college-level" name="college-level" onchange="showCollegeLevel()">
+                    <option value="sixth">6ème</option>
+                    <option value="fifth">5ème</option>
+                    <option value="fourth">4ème</option>
+                    <option value="third">3ème</option>
+                </select>
+
+                <div id="sixth-grade" style="display: none;">
+                    <h4>6ème</h4>
+                    <ol>
+                        <li>Calculez \( 12 + 8 \).</li>
+                        <li>Convertissez \( \frac{3}{4} \) en pourcentage.</li>
+                        <li>Trouvez l'aire d'un rectangle de longueur 7 cm et de largeur 3 cm.</li>
+                    </ol>
+                </div>
+                <div id="fifth-grade" style="display: none;">
+                    <h4>5ème</h4>
+                    <ol>
+                        <li>Résolvez l'équation : \( 5x - 3 = 2 \).</li>
+                        <li>Calculez le périmètre d'un cercle de rayon 4 cm.</li>
+                        <li>Simplifiez l'expression : \( 2a + 3a - 4a \).</li>
+                    </ol>
+                </div>
+                <div id="fourth-grade" style="display: none;">
+                    <h4>4ème</h4>
+                    <ol>
+                        <li>Résolvez le système d'équations : \( \begin{cases} 2x + 3y = 5 \\ 4x - y = 1 \end{cases} \).</li>
+                        <li>Calculez le volume d'un cylindre de rayon 3 cm et de hauteur 5 cm.</li>
+                        <li>Simplifiez l'expression : \( (2x + 3)(x - 4) \).</li>
+                    </ol>
+                </div>
+                <div id="third-grade" style="display: none;">
+                    <h4>3ème</h4>
+                    <ol>
+                        <li>Résolvez l'équation quadratique : \( x^2 - 4x + 4 = 0 \).</li>
+                        <li>Calculez la dérivée de
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
